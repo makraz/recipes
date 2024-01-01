@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/fake-chat-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        chatter_transports:",
+                        "content": "            fakechat+email: '%env(FAKE_CHAT_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "FAKE_CHAT_DSN=fakechat+email://default?to=TO&from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "7ac8dfaa8bfb66c21ab127e4e5f31bca8df18dfb"
+        }
+    }
+}

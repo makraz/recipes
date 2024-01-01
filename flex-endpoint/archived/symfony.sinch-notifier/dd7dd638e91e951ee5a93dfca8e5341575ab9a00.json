@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/sinch-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            sinch: '%env(SINCH_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "SINCH_DSN=sinch://SID:TOKEN@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "dd7dd638e91e951ee5a93dfca8e5341575ab9a00"
+        }
+    }
+}

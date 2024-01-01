@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/free-mobile-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            freemobile: '%env(FREE_MOBILE_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "FREE_MOBILE_DSN=freemobile://LOGIN:API_KEY@default?phone=PHONE"
+                }
+            },
+            "files": [],
+            "ref": "dbe101f67224906c96b528ca84ea22bcba00bd2b"
+        }
+    }
+}

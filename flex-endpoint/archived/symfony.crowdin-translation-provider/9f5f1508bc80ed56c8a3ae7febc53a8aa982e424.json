@@ -1,0 +1,21 @@
+{
+    "manifests": {
+        "symfony/crowdin-translation-provider": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "target": "        texter_transports:",
+                        "content": "            crowdin: '%env(CROWDIN_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "CROWDIN_DSN=crowdin://PROJECT_ID:API_TOKEN@ORGANIZATION_DOMAIN.default"
+                }
+            },
+            "files": [],
+            "ref": "9f5f1508bc80ed56c8a3ae7febc53a8aa982e424"
+        }
+    }
+}

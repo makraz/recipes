@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/smsc-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            smsc: '%env(SMSC_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "SMSC_DSN=smsc://LOGIN:PASSWORD@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "596f42aa0572e544abcb92428ddcfee958a8e6eb"
+        }
+    }
+}

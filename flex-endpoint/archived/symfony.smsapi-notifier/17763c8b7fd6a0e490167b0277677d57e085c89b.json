@@ -1,0 +1,23 @@
+{
+    "manifests": {
+        "symfony/smsapi-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            smsapi: '%env(SMSAPI_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "See https://www.smsapi.pl/docs/#autoryzacja",
+                    "#2": "SMSAPI_DSN=smsapi://TOKEN@default?from=CHANNEL_ID"
+                }
+            },
+            "files": [],
+            "ref": "17763c8b7fd6a0e490167b0277677d57e085c89b"
+        }
+    }
+}

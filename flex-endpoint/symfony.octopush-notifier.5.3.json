@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/octopush-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            octopush: '%env(OCTOPUSH_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "OCTOPUSH_DSN=octopush://USERLOGIN:APIKEY@default?from=FROM&type=TYPE"
+                }
+            },
+            "files": [],
+            "ref": "cb40d646f74a3fd254325003511f8e8b0462af7f"
+        }
+    }
+}

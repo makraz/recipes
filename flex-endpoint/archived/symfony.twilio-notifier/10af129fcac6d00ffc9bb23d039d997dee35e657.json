@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/twilio-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            twilio: '%env(TWILIO_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "TWILIO_DSN=twilio://SID:TOKEN@default?from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "10af129fcac6d00ffc9bb23d039d997dee35e657"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/sendinblue-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            sendinblue: '%env(SENDINBLUE_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "SENDINBLUE_DSN=sendinblue://API_KEY@default?sender=PHONE"
+                }
+            },
+            "files": [],
+            "ref": "fe4a888a47063f12ff2e83db69cb937bfdab931d"
+        }
+    }
+}

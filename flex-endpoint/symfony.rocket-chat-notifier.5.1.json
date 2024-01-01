@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/rocket-chat-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        chatter_transports:",
+                        "content": "            rocketchat: '%env(ROCKETCHAT_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "ROCKETCHAT_DSN=rocketchat://ACCESS_TOKEN@default?channel=CHANNEL"
+                }
+            },
+            "files": [],
+            "ref": "5c91d24b503de5cc0d0eb880fc95afa1bef8b6f4"
+        }
+    }
+}

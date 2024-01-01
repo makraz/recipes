@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/mercure-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        chatter_transports:",
+                        "content": "            mercure: '%env(MERCURE_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "MERCURE_DSN=mercure://default"
+                }
+            },
+            "files": [],
+            "ref": "98a27687305d236709390ff01d7a6a9818735b97"
+        }
+    }
+}

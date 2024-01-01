@@ -3,7 +3,8 @@
         "SymfonyCasts\\SassBundle\\SymfonycastsSassBundle": ["all"]
     },
     "copy-from-recipe": {
-        "config/": "%CONFIG_DIR%/"
+        "config/": "%CONFIG_DIR%/",
+        "assets/": "assets/"
     },
     "aliases": ["symfonycasts_sass"],
     "gitignore": [
@@ -11,10 +12,10 @@
     ],
     "add-lines": [
         {
-            "file": "asset_mapper.yaml",
+            "file": "config/packages/asset_mapper.yaml",
             "content": "\n        excluded_patterns:\n            - '*/assets/styles/_*.scss'\n            - '*/assets/styles/**/_*.scss'",
-            "position": "after_target",
-            "target": "- assets/",
+            "position": "bottom",
+            "requires": "symfony/asset-mapper",
             "warn_if_missing": true
         }
     ],

@@ -1,0 +1,21 @@
+{
+    "manifests": {
+        "symfony/loco-translation-provider": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "target": "        texter_transports:",
+                        "content": "            loco: '%env(LOCO_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "LOCO_DSN=loco://API_KEY@default"
+                }
+            },
+            "files": [],
+            "ref": "eb6413fa65d3aae92d79b86ad67c2830e4441893"
+        }
+    }
+}

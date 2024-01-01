@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "symfony/fake-sms-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        texter_transports:",
+                        "content": "            fakesms+email: '%env(FAKE_SMS_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "FAKE_SMS_DSN=fakesms+email://default?to=TO&from=FROM"
+                }
+            },
+            "files": [],
+            "ref": "b5809b9a44a5deb1b2df8654697756e8e73b7606"
+        }
+    }
+}

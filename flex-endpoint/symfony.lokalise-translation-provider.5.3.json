@@ -1,0 +1,21 @@
+{
+    "manifests": {
+        "symfony/lokalise-translation-provider": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "target": "        texter_transports:",
+                        "content": "            lokalise: '%env(LOKALISE_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "LOKALISE_DSN=lokalise://PROJECT_ID:API_KEY@default"
+                }
+            },
+            "files": [],
+            "ref": "db778cb06bece4201899ca2b33542f7cd6520d06"
+        }
+    }
+}

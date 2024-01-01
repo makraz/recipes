@@ -1,0 +1,23 @@
+{
+    "manifests": {
+        "symfony/google-chat-notifier": {
+            "manifest": {
+                "add-lines": [
+                    {
+                        "file": "config/packages/notifier.yaml",
+                        "position": "after_target",
+                        "warn_if_missing": true,
+                        "target": "        chatter_transports:",
+                        "content": "            googlechat: '%env(GOOGLE_CHAT_DSN)%'"
+                    }
+                ],
+                "env": {
+                    "#1": "See https://developers.google.com/hangouts/chat/how-tos/webhooks",
+                    "#2": "GOOGLE_CHAT_DSN=googlechat://ACCESS_KEY:ACCESS_TOKEN@default/SPACE?threadKey=THREAD_KEY"
+                }
+            },
+            "files": [],
+            "ref": "50ae9e7fe8e4fa02c0204b82db46a7b9fa77775c"
+        }
+    }
+}
