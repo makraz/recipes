@@ -1,0 +1,24 @@
+{
+    "bundles": {
+        "SymfonyCasts\\SassBundle\\SymfonycastsSassBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "aliases": ["symfonycasts_sass"],
+    "gitignore": [
+        "/%PUBLIC_DIR%/assets/"
+    ],
+    "add-lines": [
+        {
+            "file": "asset_mapper.yaml",
+            "content": "\n        excluded_patterns:\n            - '*/assets/styles/_*.scss'\n            - '*/assets/styles/**/_*.scss'",
+            "position": "after_target",
+            "target": "- assets/",
+            "warn_if_missing": true
+        }
+    ],
+    "conflict": {
+        "symfony/asset-mapper": "<6.3"
+    }
+}
